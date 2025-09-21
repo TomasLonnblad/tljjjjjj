@@ -6,8 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-const HatModel = React.memo(function HatModel(props) {
-  // Use React.memo for performance optimization
+function HatModel(props) {
   const { nodes, materials } = useGLTF("/models/hat-transformed.glb");
 
   const modelRef = useRef();
@@ -34,7 +33,7 @@ const HatModel = React.memo(function HatModel(props) {
       />
     </group>
   );
-});
+}
 
-export default HatModel;
+export default React.memo(HatModel);
 useGLTF.preload("/models/hat-transformed.glb");

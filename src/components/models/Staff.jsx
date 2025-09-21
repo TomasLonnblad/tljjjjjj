@@ -6,8 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-const Staff = React.memo(function Staff(props) {
-  // Use React.memo for performance optimization
+function Staff(props) {
   const { nodes, materials } = useGLTF("/models/staff-transformed.glb");
   const modelRef = useRef();
 
@@ -70,7 +69,7 @@ const Staff = React.memo(function Staff(props) {
       />
     </group>
   );
-});
+}
 
-export default Staff;
+export default React.memo(Staff);
 useGLTF.preload("/models/staff-transformed.glb");
