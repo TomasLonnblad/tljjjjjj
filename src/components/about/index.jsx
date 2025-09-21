@@ -1,7 +1,12 @@
 import React from "react";
 import ItemLayout from "./ItemLayout";
 import Link from "next/link";
+import chalk from 'chalk';
 
+console.log(chalk.magenta('Hello from the WebContainer API 👋'));
+console.log(chalk.green(`Running Node ${process.version}`));
+
+// Run `node index.js` from the terminal
 const AboutDetails = () => {
   return (
     <section className="py-20 w-full">
